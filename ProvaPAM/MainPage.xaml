@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProvaPAM.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label
+                Text="ROLADOR DE DADOS"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+            <Label/>
+            <Label
+                Text="0"
+                x:Name="dadoOut"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1"
+            />
+
+            <Picker x:Name="dadoSelect"
+                    Title="Quantidade de lados"
+                    SelectedIndexChanged="dadoSelect_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:Int32}">
+                        <x:Int32>4</x:Int32>
+                        <x:Int32>6</x:Int32>
+                        <x:Int32>10</x:Int32>
+                        <x:Int32>20</x:Int32>
+                        <x:Int32>100</x:Int32>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button
+                Text="ROLAR O DADO"
+                x:Name="dadoButton"
+                Clicked="dadoButton_OnClicked"
+            />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
